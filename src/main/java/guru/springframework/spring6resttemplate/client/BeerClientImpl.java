@@ -49,6 +49,7 @@ public class BeerClientImpl implements BeerClient {
         RestTemplate restTemplate = restTemplateBuilder.build();
 
        URI uri = restTemplate.postForLocation(GET_BEER_PATH,beerDTO);
+
         return restTemplate.getForObject(uri.getPath(),BeerDTO.class);
     }
 
